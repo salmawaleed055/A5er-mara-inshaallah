@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix(":/Images/hospital.jpg");
     QPixmap backgroundImage(":/Images/download.jpg");
 
-    //Set the background image
+
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);
@@ -35,8 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->labelimagelogin->setVisible(true);
     ui->error->setVisible(false);
 
-    //Nutrition,OG,IM,Ophthalmology,Dermatology
-    //QObject::connect(&PatientManagmentWindow, &PatientManagmentWindow::elementAdded, this, &MainWindow::updateMap);
+
     for (int i=0;i<doctors.size();i++)
     {
         if (doctors[i].specialization=="Nutrition")
@@ -176,15 +175,6 @@ void MainWindow::on_pushButtonLogin_clicked()
     ui->error->setVisible(true);
 }
 
-// void MainWindow::updateMap(const QString &key, const QString &value, QString n) {
-//     for (int i=0;i<patients.size();i++)
-//     {
-//         if (patients[i].username==n)
-//             patients[i].appointments.insert(key, value);
-//     }
-
-//     // Update UI or perform any necessary actions with myMap
-// }
 void MainWindow::on_PushbuttonRegister_clicked()
 {
     hide();

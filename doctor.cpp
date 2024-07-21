@@ -39,7 +39,6 @@ doctor::doctor(QWidget *parent, QString docname)
     ui->label_HelloDr->setText("Hello Dr. "+ currdoc->username);
     QPixmap backgroundImage(":/Images/download.jpg");
 
-    // Set the background image
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);
@@ -53,7 +52,6 @@ doctor::~doctor()
 
 void doctor::on_pushButton_profile_clicked()
 {
-   // QString profile = "Name: "+currdoc.username;
     ///continue
     QMessageBox::information(this, tr("profile"), "Name: "+ currdoc->username +"\nSpecialization" + currdoc->specialization + "\nGender: "+currdoc->gender +
                                                      "\nAge: "+ QString::number(currdoc->age) + "\nWorking day: "+ currdoc->days.join(", ") + "time from: "+ QString::number(currdoc->starttime)
@@ -62,29 +60,6 @@ void doctor::on_pushButton_profile_clicked()
 
 
 
-// QString doctor::getAssignmentString(drclass& doc)
-// {
-//     QString assignmentString;
-//     for (const auto& patient : doc.dpatients)  //assignments instead of patients
-//     {
-//         assignmentString += patient + ", ";
-//     }
-//     if (!assignmentString.isEmpty())
-//     {
-//         assignmentString.chop(2); // Remove the trailing ", "
-//     }
-//     return assignmentString;
-// }
-// void doctor::updateAssignments(const patient& pat) {       ///////////////////////////////////
-//     // Check if the doctor has an appointment with the patient
-//     for (auto it = pat.appointments.begin(); it!= pat.appointments.end(); ++it) {
-//         if (it.value() == currdoc.username) {
-//             // Add the patient to the doctor's assignment list
-//             currdoc.patients.append(pat.name);
-//             break;
-//         }
-//     }
-// }
 
 void doctor::on_pushButton_profile_2_clicked()
 {
@@ -94,8 +69,7 @@ void doctor::on_pushButton_profile_2_clicked()
         patientList = patientList + pat + "\n";
     }
     QMessageBox::information(this, tr("Patient List"), "Patients:\n" + patientList);
-   // QString assignmentString = getAssignmentString(currdoc);                /////////
-    //QMessageBox::information(this, tr("Assignments"), assignmentString);
+
 }
 
 
@@ -106,10 +80,7 @@ void doctor::on_pushButton_schedule_clicked()
     {
         scheduleText += day + " - " + QString::number(currdoc->starttime) + ":00 to " + QString::number(currdoc->endtime) + ":00\n";
     }
-    // for (const auto& patient : currdoc->dpatients)
-    // {
-    //     scheduleText += patient + "\n";
-    // }
+
     QMessageBox::information(this, tr("Schedule"), scheduleText);
 }
 

@@ -26,7 +26,7 @@ nursewindow::nursewindow(QWidget *parent,QString n)
     ui->label_Hellonur->setText("Hello nurse. "+ nur->username);
     QPixmap backgroundImage(":/Images/download.jpg");
 
-    // Set the background image
+
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);
@@ -67,10 +67,6 @@ void nursewindow::on_pushButton_Schedule_clicked()
     {
         scheduleText += day + " - " + QString::number(nur->starttime) + ":00 to " + QString::number(nur->endtime) + ":00\n";
     }
-    // for (const auto& patient : nur.patients)
-    // {
-    //     scheduleText += patient + "\n";
-    // }
     QMessageBox::information(this, tr("Schedule"), scheduleText);
 }
 

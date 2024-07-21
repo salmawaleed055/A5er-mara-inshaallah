@@ -11,8 +11,6 @@ scheduleedit::scheduleedit(QWidget *parent, QString drname)
 {
     ui->setupUi(this);
     QPixmap backgroundImage(":/Images/download.jpg");
-
-    // Set the background image
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);

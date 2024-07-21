@@ -17,7 +17,7 @@ PatientManagmentWindow::PatientManagmentWindow(QWidget *parent,QString patname) 
     QDialog(parent),
     ui(new Ui::PatientManagmentWindow),
 
-    submit(false) // Initialize submit as false
+    submit(false)
 {
     QPixmap backgroundImage(":/Images/download.jpg");
     for (int i=0;i<patients.size();i++)
@@ -28,20 +28,18 @@ PatientManagmentWindow::PatientManagmentWindow(QWidget *parent,QString patname) 
         }
     }
 
-    // Set the background image
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);
     this->setPalette(palette);
 
     ui->setupUi(this);
-    //QPixmap pix(":/Images/Imagepatientwindow");
+
     ui->comboBoxCancel->setVisible(false);
     ui->comboBoxReschedule->setVisible(false);
     ui->pushButtonSubmit->setVisible(false);
     ui->labelHello_2->setText("Hello "+patname);
 
-   // currentPatient.appointments.clear();
 
     updateComboBoxes();
 }
@@ -135,11 +133,11 @@ if (!filePath.isEmpty()) {
 }
 void PatientManagmentWindow::updateComboBoxes()
 {
-    // // Update ComboBox in RescheduleAppointmentWindow
+
     ui->comboBoxReschedule->clear();
 
 
-    // // Update ComboBox in CancelAppointmentWindow
+
     ui->comboBoxCancel->clear();
 
     for (auto it=currentPatient->appointments.begin();it!=currentPatient->appointments.end();it++)
@@ -148,10 +146,7 @@ void PatientManagmentWindow::updateComboBoxes()
         ui->comboBoxReschedule->addItem(it.key()+" - "+it.value());
     }
 
-    // for (int i=0;i<currentPatient.appointments.size();i++){
-    //     ui->comboBoxCancel->addItem(currentPatient.appointments[i]);
-    //     ui->comboBoxReschedule->addItem(currentPatient.appointments[i]);
-    // }
+
 }
 
 
@@ -161,9 +156,9 @@ void PatientManagmentWindow::on_pushButtonSubmit_clicked()
         int currentIndex = ui->comboBoxCancel->currentIndex();
         if (currentIndex >= 0) {
             QString selectedItem = ui->comboBoxCancel->itemText(currentIndex);
-            currentPatient->appointments.remove(selectedItem.section(" - ", 0, 0)); // Remove slot from appointments map
+            currentPatient->appointments.remove(selectedItem.section(" - ", 0, 0));
             //currentPatient.appointments.remove(selectedItem);
-            ui->comboBoxCancel->removeItem(currentIndex); // Remove item from ComboBox#
+            ui->comboBoxCancel->removeItem(currentIndex);
             ui->comboBoxReschedule->removeItem(currentIndex);
         }
         ui->comboBoxCancel->setVisible(false);
@@ -175,8 +170,7 @@ void PatientManagmentWindow::on_pushButtonSubmit_clicked()
         int currentIndex = ui->comboBoxReschedule->currentIndex();
         if (currentIndex >= 0) {
             QString selectedItem = ui->comboBoxReschedule->itemText(currentIndex);
-            currentPatient->appointments.remove(selectedItem.section(" - ", 0, 0)); // Remove slot from appointments map
-            //currentPatient.appointments.removeOne(selectedItem);
+            currentPatient->appointments.remove(selectedItem.section(" - ", 0, 0));
             ui->comboBoxReschedule->removeItem(currentIndex);
             ui->comboBoxCancel->removeItem(currentIndex);
             BookAppointmentWindow* app = new BookAppointmentWindow(this,currentPatient->username);
@@ -195,7 +189,7 @@ void PatientManagmentWindow::on_pushButton_clicked()
 {
     hide();
     MainWindow* win=new MainWindow(this);
-    //win->setpatapp(currentPatient->appointments,currentPatient->username);
+
     win->show();
 
 }

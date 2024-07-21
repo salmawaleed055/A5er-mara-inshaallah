@@ -56,14 +56,7 @@ void BookAppointmentWindow::addSlotToList(const QString &slot)
 }
 
 
-// void BookAppointmentWindow::pushElement(const QString &key, const QString &value) {
-//     // Perform actions to add element to map or wherever it's stored
-//     // For example:
-//     //currentPatient.appointments.insert(key, value);
 
-//     // Emit the signal to notify other parts of the application
-//     emit elementAdded(key, value);
-// }
 void BookAppointmentWindow::on_radioButton_Nutrition_clicked()
 {
    ui->label_Available_slots->setText("Available slots and doctors are:");
@@ -166,8 +159,6 @@ void BookAppointmentWindow::on_slotsListView_itemClicked(QListWidgetItem *item)
 void BookAppointmentWindow::on_pushButtonSubmit_clicked()     ///not handeled yet
 {
     ui->labelERROR->setVisible(false);
-    //submitClicked = true;
-    //int i= ui->slotsListView->currentIndex();
     QString selectedSlot;
     QListWidgetItem *currentItem = ui->slotsListView->currentItem();
     if(currentItem){

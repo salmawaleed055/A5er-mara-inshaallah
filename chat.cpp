@@ -8,7 +8,7 @@ chat::chat(QWidget *parent)
     ui->setupUi(this);
     QPixmap backgroundImage(":/Images/download.jpg");
 
-    // Set the background image
+
     QBrush backgroundBrush(backgroundImage);
     QPalette palette = this->palette();
     palette.setBrush(QPalette::Window, backgroundBrush);
@@ -25,7 +25,6 @@ void chat::on_pushButtonsubmit_clicked()
 {
     ui->plainTextEdit_Chat->setPlainText("");
     ui->labelsubmitclicked->setVisible(true);
-    //ui->labelsubmitclicked->setText("<font color='blue'>Your message is sent. Expect a call very soon</font>");
 
 }
 

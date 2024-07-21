@@ -26,4 +26,3 @@ QVector<drclass*>Derm;
 QVector<drclass*> oph;
 
 users::users() {}
-//QString n, QString p, QString s , QString g, int a,int st,int e,QVector<QString> d
