@@ -1,0 +1,17 @@
+Name: Ali
+Age: 22
+Gender: Male
+Blood Type: O+
+Chronic Diseases: None
+Past Appointments:
+-dermatology: 5/2/2024 11:00 am
+
+
+Name: Amr
+Age: 43
+Gender: male
+Blood Type: AB-
+Chronic Diseases: Asthma
+Past Appointments:
+- Nutrition: 5/3/2023  1:00 pm
+

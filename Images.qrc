@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/Images">
+        <file>imageloginpage.jpg</file>
+        <file>Imagepatientwindow</file>
+        <file>download.jpg</file>
+        <file>another back.jpg</file>
+        <file>hospital.jpg</file>
+    </qresource>
+    <qresource prefix="/Medical record file">
+        <file>medical record.txt</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>schedule Dr.txt</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,20 @@
+Name: Hamza
+Age: 40
+Gender: Male
+Specialization: Dermatology
+Experience: 18 years
+Language spoken: Arabic, English, German
+Email: hamza.hosp@gmail.com
+Schedule:-
+   Monday: 9:00 AM-12:00 PM
+
+
+Name: Asma
+Age: 30
+Gender: Female
+Specialization: Ophthalmology
+Experience: 8 years
+Language spoken: Arabic, English
+Email: asma.hosp@gmail.com
+Schedule:-
+   Wednesday: 2:00 PM-5:00 PM
