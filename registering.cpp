@@ -141,20 +141,21 @@ void registering::on_register_2_clicked()
     int e=0;
     if (ui->toedit->text()!=""){
         e=ui->toedit->text().toInt();
+    }
 
-    ///Nutrition,OG,IM,Ophthalmology,Dermatology
+        ///Nutrition,OG,IM,Ophthalmology,Dermatology
 
-    QString spec="";
-    if (ui->radioButton_Nutrition->isChecked())
-        spec="Nutrition";
-    else if (ui->radioButton_Dermatology->isChecked())
-        spec="Dermatology";
-    else if (ui->radioButton_OG->isChecked())
-        spec="OG";
-    else if (ui->radioButton_Ophthalmology->isChecked())
-        spec="Ophthalmology";
-    else if (ui->radioButton_internalmedicine->isChecked())
-        spec="IM";
+        QString spec="";
+        if (ui->radioButton_Nutrition->isChecked())
+            spec="Nutrition";
+        else if (ui->radioButton_Dermatology->isChecked())
+            spec="Dermatology";
+        else if (ui->radioButton_OG->isChecked())
+            spec="OG";
+        else if (ui->radioButton_Ophthalmology->isChecked())
+            spec="Ophthalmology";
+        else if (ui->radioButton_internalmedicine->isChecked())
+            spec="IM";
 
     bool drcheck=false;
     if (spec!=""&&st!=0&&e!=0&&!dd.empty())
@@ -214,4 +215,3 @@ void registering::on_register_2_clicked()
     }
 }
 
-}
